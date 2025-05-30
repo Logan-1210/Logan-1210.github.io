@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problem Solver for You</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Share Your Thoughts With Me Thango</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
         
         body {
             margin: 0;
@@ -18,15 +22,18 @@
             background-attachment: fixed;
             background-position: center;
             background-blend-mode: overlay;
+            min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
         }
         
         .container {
+            width: 90%;
             max-width: 800px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -35,44 +42,46 @@
             font-family: 'Dancing Script', cursive;
             color: #ff66b3;
             text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin: 10px 0 15px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             animation: fadeIn 2s;
+            line-height: 1.2;
         }
         
         .heart {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             background-color: #ff66b3;
             transform: rotate(45deg);
             animation: float 4s infinite ease-in-out;
             opacity: 0.7;
+            display: none; /* Hidden on mobile by default */
         }
         
         .heart:before, .heart:after {
             content: '';
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             background-color: #ff66b3;
             border-radius: 50%;
             position: absolute;
         }
         
         .heart:before {
-            top: -15px;
+            top: -10px;
             left: 0;
         }
         
         .heart:after {
             top: 0;
-            left: -15px;
+            left: -10px;
         }
         
         @keyframes float {
             0%, 100% { transform: rotate(45deg) translateY(0); }
-            50% { transform: rotate(45deg) translateY(-20px); }
+            50% { transform: rotate(45deg) translateY(-10px); }
         }
         
         @keyframes fadeIn {
@@ -81,14 +90,14 @@
         }
         
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             animation: slideUp 1s ease-out;
         }
         
         @keyframes slideUp {
             from { 
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to { 
                 opacity: 1;
@@ -101,17 +110,14 @@
             margin-bottom: 8px;
             font-weight: 600;
             color: #ff66b3;
+            font-size: clamp(16px, 4vw, 18px);
         }
         
         .text-box {
-            background-image: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 15px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
             border: 2px solid #ffb3d9;
             transition: all 0.3s;
         }
@@ -121,14 +127,15 @@
             padding: 12px;
             border: none;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: clamp(14px, 4vw, 16px);
             transition: all 0.3s;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.8);
             resize: vertical;
+            min-height: 44px; /* Better touch target */
         }
         
         textarea {
-            min-height: 150px;
+            min-height: 120px;
         }
         
         .text-box:focus-within {
@@ -138,15 +145,15 @@
         
         textarea:focus, input[type="text"]:focus {
             outline: none;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
         }
         
         .submit-btn {
             background-color: #ff66b3;
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 12px 25px;
+            font-size: clamp(16px, 4vw, 18px);
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
@@ -156,73 +163,69 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             animation: pulse 2s infinite;
+            width: 100%;
+            max-width: 250px;
         }
         
         .submit-btn:hover {
             background-color: #ff3385;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 102, 179, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 102, 179, 0.3);
         }
         
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(255, 102, 179, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 102, 179, 0); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 102, 179, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 102, 179, 0); }
         }
         
         .message {
             text-align: center;
-            margin-top: 30px;
+            margin: 20px 0;
             font-style: italic;
             color: #ff66b3;
             animation: fadeIn 2s;
+            font-size: clamp(14px, 4vw, 16px);
+            line-height: 1.4;
         }
         
-        /* Floating hearts */
-        .heart1 {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .heart2 {
-            top: 20%;
-            right: 15%;
-            animation-delay: 1s;
-            width: 20px;
-            height: 20px;
-        }
-        
-        .heart3 {
-            bottom: 15%;
-            left: 20%;
-            animation-delay: 2s;
-            width: 25px;
-            height: 25px;
-        }
-        
-        .heart4 {
-            bottom: 25%;
-            right: 10%;
-            animation-delay: 1.5s;
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .container {
-                margin: 20px;
-                padding: 20px;
+        /* Show hearts only on larger screens */
+        @media (min-width: 768px) {
+            .heart {
+                display: block;
+                width: 30px;
+                height: 30px;
             }
-            
-            h1 {
-                font-size: 2.5rem;
+            .heart:before, .heart:after {
+                width: 30px;
+                height: 30px;
+            }
+            .heart:before {
+                top: -15px;
+            }
+            .heart:after {
+                left: -15px;
+            }
+            .container {
+                padding: 30px;
+                margin: 30px auto;
+            }
+            .submit-btn {
+                padding: 15px 30px;
+            }
+        }
+        
+        /* Fix for mobile form zooming */
+        @media screen and (max-width: 480px) {
+            input, textarea, select {
+                font-size: 16px !important;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Floating hearts -->
+        <!-- Floating hearts (visible only on larger screens) -->
         <div class="heart heart1"></div>
         <div class="heart heart2"></div>
         <div class="heart heart3"></div>
@@ -253,5 +256,20 @@
             <button type="submit" class="submit-btn">Send to Your Logumaniii</button>
         </form>
     </div>
+
+    <script>
+        // Prevent form resubmission on page refresh
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+        
+        // Fix for iOS viewport scaling
+        document.addEventListener('DOMContentLoaded', function() {
+            let viewport = document.querySelector("meta[name=viewport]");
+            if (navigator.userAgent.match(/iPhone/i)) {
+                viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+            }
+        });
+    </script>
 </body>
 </html>
