@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -103,25 +103,42 @@
             color: #ff66b3;
         }
         
+        .text-box {
+            background-image: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ffb3d9;
+            transition: all 0.3s;
+        }
+        
         textarea, input[type="text"] {
             width: 100%;
             padding: 12px;
-            border: 2px solid #ffb3d9;
+            border: none;
             border-radius: 8px;
             font-size: 16px;
             transition: all 0.3s;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.7);
+            resize: vertical;
         }
         
         textarea {
             min-height: 150px;
-            resize: vertical;
+        }
+        
+        .text-box:focus-within {
+            border-color: #ff66b3;
+            box-shadow: 0 0 0 3px rgba(255, 102, 179, 0.2);
         }
         
         textarea:focus, input[type="text"]:focus {
-            border-color: #ff66b3;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(255, 102, 179, 0.2);
+            background-color: rgba(255, 255, 255, 0.9);
         }
         
         .submit-btn {
@@ -215,23 +232,26 @@
         <p class="message">Unakkenna venum sollu...🤌Ulagaththai kaatta sollu🤝</p>
         
         <form action="https://formspree.io/f/mblonyka" method="POST">
-    <input type="hidden" name="_subject" value="Avalin ennam...">
-    <input type="text" name="_gotcha" style="display:none">
-    <input type="hidden" name="_next" value="<input type="hidden" name="_next" value="https://Logan-1210.github.io/Logan-1210.github.io/thankyou.html">
-    
-    <div class="form-group">
-        <label for="problem">Enna Aachu Thango🫂?</label>
-        <textarea id="problem" name="problem" required></textarea>
-    </div>
-    
-    <div class="form-group">
-        <label for="solution">Enna pandrathu nu sollu kuttyy?</label>
-        <textarea id="solution" name="solution"></textarea>
-    </div>
-    
-    <button type="submit" class="submit-btn">Send to Your Logumaniii</button>
-</form>
+            <input type="hidden" name="_subject" value="Avalin ennam...">
+            <input type="text" name="_gotcha" style="display:none">
+            <input type="hidden" name="_next" value="https://Logan-1210.github.io/Logan-1210.github.io/thankyou.html">
+            
+            <div class="form-group">
+                <label for="problem">Enna Aachu Thango🫂?</label>
+                <div class="text-box">
+                    <textarea id="problem" name="problem" required></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="solution">Enna pandrathu nu sollu kuttyy?</label>
+                <div class="text-box">
+                    <textarea id="solution" name="solution"></textarea>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send to Your Logumaniii</button>
+        </form>
     </div>
 </body>
 </html>
-
