@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Share Your Thoughts With Me Thango</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
@@ -15,40 +15,37 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #ffe6f2;
+            background: linear-gradient(135deg, #ffcce6, #ffb3d9, #ff99cc);
             color: #333;
-            background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-blend-mode: overlay;
             min-height: 100vh;
-            -webkit-text-size-adjust: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            overflow-x: hidden;
         }
         
         .container {
             width: 90%;
             max-width: 800px;
             background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
-            padding: 30px;
+            padding: 40px 30px;
+            border: 2px solid rgba(255, 102, 179, 0.2);
+            z-index: 10;
         }
         
         h1 {
             font-family: 'Dancing Script', cursive;
-            color: #ff66b3;
+            color: #ff3399;
             text-align: center;
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            margin: 10px 0 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 2s;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin: 10px 0 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s;
             line-height: 1.2;
         }
         
@@ -118,7 +115,7 @@
             display: block;
             margin-bottom: 10px;
             font-weight: 600;
-            color: #ff66b3;
+            color: #ff3399;
             font-size: clamp(16px, 4vw, 18px);
             padding-left: 10px;
         }
@@ -143,46 +140,40 @@
             background-color: rgba(255, 255, 255, 0.8);
             resize: vertical;
             min-height: 150px;
-            background-image: url('https://i.pinimg.com/originals/8f/ba/cb/8fbacbdeef7c9a9a3b4a2e4a8f6d5f5e.png');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ffb3d9" opacity="0.2" d="M20,50 Q40,30 50,20 Q60,30 80,50 Q60,70 50,80 Q40,70 20,50 Z"/></svg>');
             background-size: 100px;
             background-repeat: no-repeat;
             background-position: right bottom;
-            background-blend-mode: overlay;
-        }
-        
-        #solution {
-            background-image: url('https://i.pinimg.com/originals/7a/3b/6f/7a3b6f8a9e0d8e8f0e8e3e8f0e8e3e8f.png');
         }
         
         .text-box:focus-within {
-            border-color: #ff66b3;
-            box-shadow: 0 0 0 4px rgba(255, 102, 179, 0.25);
+            border-color: #ff3399;
+            box-shadow: 0 0 0 4px rgba(255, 51, 153, 0.25);
         }
         
         textarea:focus {
             outline: none;
             background-color: rgba(255, 255, 255, 0.95);
-            background-image: none;
         }
         
         .submit-btn {
-            background: linear-gradient(135deg, #ff66b3, #ff3385);
+            background: linear-gradient(135deg, #ff3399, #ff0066);
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 16px 35px;
             font-size: clamp(16px, 4vw, 18px);
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
             display: block;
-            margin: 30px auto;
+            margin: 35px auto;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             animation: pulse 2s infinite;
             width: 100%;
-            max-width: 280px;
-            box-shadow: 0 5px 15px rgba(255, 102, 179, 0.3);
+            max-width: 300px;
+            box-shadow: 0 5px 20px rgba(255, 51, 153, 0.4);
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -195,15 +186,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #ff3385, #ff66b3);
+            background: linear-gradient(135deg, #ff0066, #ff3399);
             opacity: 0;
             transition: opacity 0.3s;
             z-index: -1;
         }
         
         .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 102, 179, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(255, 51, 153, 0.5);
         }
         
         .submit-btn:hover::before {
@@ -211,19 +202,20 @@
         }
         
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 102, 179, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 102, 179, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 102, 179, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(255, 51, 153, 0.7); }
+            70% { box-shadow: 0 0 0 18px rgba(255, 51, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 51, 153, 0); }
         }
         
         .message {
             text-align: center;
             margin: 25px 0;
             font-style: italic;
-            color: #ff66b3;
+            color: #ff3399;
             animation: fadeIn 2s;
-            font-size: clamp(14px, 4vw, 16px);
+            font-size: clamp(15px, 4vw, 17px);
             line-height: 1.6;
+            padding: 0 15px;
         }
         
         /* Thank you message */
@@ -235,18 +227,54 @@
         }
         
         .thank-you h2 {
-            color: #ff66b3;
+            color: #ff3399;
             font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
         
-        .thank-you img {
-            width: 120px;
-            margin: 20px auto;
+        /* Korean love symbol animation */
+        .korean-love {
+            font-size: 120px;
+            text-align: center;
+            margin: 25px 0;
             display: block;
+            animation: loveAnimation 2.5s infinite ease-in-out;
+            transform-origin: center;
+            filter: drop-shadow(0 5px 10px rgba(255, 51, 153, 0.3));
         }
-
+        
+        @keyframes loveAnimation {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg); 
+                color: #ff3399;
+            }
+            20% { 
+                transform: scale(1.2) rotate(-15deg); 
+                color: #ff66b3;
+            }
+            40% { 
+                transform: scale(1.3) rotate(5deg); 
+                color: #ff0066;
+            }
+            60% { 
+                transform: scale(1.2) rotate(15deg); 
+                color: #ff66b3;
+            }
+            80% { 
+                transform: scale(1.1) rotate(-5deg); 
+                color: #ff3399;
+            }
+        }
+        
+        .thank-you p {
+            font-size: clamp(16px, 4vw, 18px);
+            margin: 15px 0;
+            color: #555;
+            line-height: 1.6;
+        }
+        
         /* Loading spinner */
         .spinner {
             display: none;
@@ -254,7 +282,7 @@
             height: 50px;
             margin: 30px auto;
             border: 5px solid rgba(243, 243, 243, 0.8);
-            border-top: 5px solid #ff66b3;
+            border-top: 5px solid #ff3399;
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -264,55 +292,37 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Telegram notification */
-        .telegram-notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #0088cc;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-            z-index: 1000;
+        .status-message {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ff3399;
             display: none;
-            animation: slideIn 0.5s ease-out;
-            max-width: 350px;
         }
         
-        @keyframes slideIn {
-            from { transform: translateX(100%); }
-            to { transform: translateX(0); }
+        /* Background decorations */
+        .bg-decoration {
+            position: fixed;
+            z-index: 0;
+            opacity: 0.1;
+            font-size: 300px;
+            animation: floatBg 20s infinite linear;
         }
         
-        .telegram-notification-content {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        @keyframes floatBg {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
         }
         
-        .telegram-icon {
-            width: 30px;
-            height: 30px;
-            flex-shrink: 0;
-        }
-        
-        .telegram-text {
-            flex: 1;
-        }
-        
-        .telegram-notification button {
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 20px;
-            margin-left: 10px;
-        }
+        .bg-1 { top: 5%; left: 5%; animation-duration: 25s; }
+        .bg-2 { top: 15%; right: 10%; animation-duration: 30s; }
+        .bg-3 { bottom: 10%; left: 15%; animation-duration: 35s; }
+        .bg-4 { bottom: 20%; right: 5%; animation-duration: 40s; }
         
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                padding: 25px 20px;
             }
             
             .heart {
@@ -334,14 +344,12 @@
             }
             
             .submit-btn {
-                padding: 14px 25px;
-                max-width: 240px;
+                padding: 15px 30px;
+                max-width: 260px;
             }
             
-            .telegram-notification {
-                left: 20px;
-                right: 20px;
-                max-width: none;
+            .korean-love {
+                font-size: 90px;
             }
         }
         
@@ -351,28 +359,31 @@
             }
             
             .container {
-                padding: 15px;
+                padding: 20px 15px;
             }
             
             textarea {
-                font-size: 16px;
+                min-height: 120px;
             }
             
             .submit-btn {
                 max-width: 100%;
             }
-        }
-        
-        .status-message {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 14px;
-            color: #ff66b3;
-            display: none;
+            
+            .korean-love {
+                font-size: 80px;
+                margin: 15px 0;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Background decorations -->
+    <div class="bg-decoration bg-1">🫰</div>
+    <div class="bg-decoration bg-2">🫰</div>
+    <div class="bg-decoration bg-3">🫰</div>
+    <div class="bg-decoration bg-4">🫰</div>
+    
     <div class="container">
         <!-- Floating hearts -->
         <div class="heart heart1"></div>
@@ -408,23 +419,15 @@
         
         <div class="thank-you" id="thankYou">
             <h2>Thank You! ❤️</h2>
-            <img src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-11-849_512.gif" alt="Heart animation">
+            <div class="korean-love">🫰</div>
             <p>I got your msg di Chella kuttyyyyy 🤌🫂</p>
+            <p>Your thoughts mean the world to me!</p>
             <p>I'll get back to you soon.</p>
         </div>
     </div>
 
-    
-
     <script>
-        // Telegram configuration
-        const TELEGRAM_BOT_TOKEN = '7798843127:AAG4wZ8U6HT9fHyafuF4TCyNb6voTOGj7hw';
-        const TELEGRAM_CHAT_ID = '1192868323';
-        
-        // Formspree configuration
-        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mblonyka'; // Replace with your Formspree ID
-        
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const submitBtn = document.querySelector('.submit-btn');
             const spinner = document.getElementById('spinner');
@@ -434,79 +437,17 @@
             submitBtn.style.display = 'none';
             spinner.style.display = 'block';
             statusMessage.style.display = 'block';
-            statusMessage.textContent = 'Sending your message...';
-            statusMessage.style.color = '#ff66b3';
+            statusMessage.textContent = 'Sending your message with love...';
+            statusMessage.style.color = '#ff3399';
             
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            
-            const message = `📬 *New Form Submission!*\n\n` +
-                            `*Problem:*\n${data.problem}\n\n` +
-                            `*Solution:*\n${data.solution || 'Not provided'}`;
-            
-            try {
-                // 1. Send email via Formspree
-                
-                const emailResponse = await fetch(FORMSPREE_ENDPOINT, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                });
-                
-                if (!emailResponse.ok) {
-                    throw new Error('Email sending failed');
-                }
-                
-                // 2. Send Telegram notification
-                
-                const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-                const telegramResponse = await fetch(telegramUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: message,
-                        parse_mode: 'Markdown'
-                    }),
-                });
-                
-                if (!telegramResponse.ok) {
-                    throw new Error('Telegram notification failed');
-                }
-                
-                // Show Telegram notification
-                
-                
-                // Show success message
+            // Simulate sending process
+            setTimeout(() => {
+                // Hide spinner and show thank you message
+                spinner.style.display = 'none';
+                statusMessage.style.display = 'none';
                 document.getElementById('contactForm').style.display = 'none';
                 document.getElementById('thankYou').style.display = 'block';
-                
-            } catch (error) {
-                console.error('Error:', error);
-                statusMessage.textContent = 'Error: ' + error.message;
-                statusMessage.style.color = '#ff3385';
-                
-                // Try to show partial success message
-                if (error.message === 'Telegram notification failed') {
-                    document.getElementById('contactForm').style.display = 'none';
-                    document.getElementById('thankYou').style.display = 'block';
-                    document.getElementById('thankYou').innerHTML += `
-                        <p style="color:#ff3385; margin-top:15px;">
-                            Note: Email was sent but Telegram notification failed
-                        </p>
-                    `;
-                } else {
-                    alert('There was an error sending your message. Please try again.');
-                }
-            } finally {
-                // Hide spinner
-                spinner.style.display = 'none';
-            }
+            }, 2000);
         });
 
         // Prevent form resubmission on page refresh
