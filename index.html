@@ -458,7 +458,7 @@
             
             try {
                 // 1. Send email via Formspree
-                statusMessage.textContent = 'Sending email notification...';
+                
                 const emailResponse = await fetch(FORMSPREE_ENDPOINT, {
                     method: 'POST',
                     headers: {
@@ -472,7 +472,7 @@
                 }
                 
                 // 2. Send Telegram notification
-                statusMessage.textContent = 'Sending Telegram notification...';
+                
                 const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
                 const telegramResponse = await fetch(telegramUrl, {
                     method: 'POST',
