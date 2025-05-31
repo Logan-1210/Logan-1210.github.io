@@ -1,1066 +1,532 @@
 <!DOCTYPE html>
-
-<html lang=”en”>
-
+<html lang="en">
 <head>
-
-    <meta charset=”UTF-8”>
-
-    <meta name=”viewport” content=”width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no”>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Share Your Thoughts With Me Thango</title>
-
     <style>
-
-        @import url(‘https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap’);
-
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
         
-
-•	{
-
-            Box-sizing: border-box;
-
-            Margin: 0;
-
-            Padding: 0;
-
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-
         
-
-        Body {
-
-            Font-family: ‘Montserrat’, sans-serif;
-
-            Background-color: #ffe6f2;
-
-            Color: #333;
-
-            Background-image: url(‘https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80’);
-
-            Background-size: cover;
-
-            Background-attachment: fixed;
-
-            Background-position: center;
-
-            Background-blend-mode: overlay;
-
-            Min-height: 100vh;
-
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffe6f2;
+            color: #333;
+            background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-blend-mode: overlay;
+            min-height: 100vh;
             -webkit-text-size-adjust: 100%;
-
-            Display: flex;
-
-            Justify-content: center;
-
-            Align-items: center;
-
-            Padding: 20px;
-
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
-
         
-
         .container {
-
-            Width: 90%;
-
-            Max-width: 800px;
-
-            Background-color: rgba(255, 255, 255, 0.95);
-
-            Border-radius: 15px;
-
-            Box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-
-            Position: relative;
-
-            Overflow: hidden;
-
-            Padding: 30px;
-
+            width: 90%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            padding: 30px;
         }
-
         
-
-        H1 {
-
-            Font-family: ‘Dancing Script’, cursive;
-
-            Color: #ff66b3;
-
-            Text-align: center;
-
-            Font-size: clamp(2rem, 6vw, 3.5rem);
-
-            Margin: 10px 0 15px;
-
-            Text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-
-            Animation: fadeIn 2s;
-
-            Line-height: 1.2;
-
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff66b3;
+            text-align: center;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin: 10px 0 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s;
+            line-height: 1.2;
         }
-
         
-
         .heart {
-
-            Position: absolute;
-
-            Width: 25px;
-
-            Height: 25px;
-
-            Background-color: #ff66b3;
-
-            Transform: rotate(45deg);
-
-            Animation: float 6s infinite ease-in-out;
-
-            Opacity: 0.8;
-
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: #ff66b3;
+            transform: rotate(45deg);
+            animation: float 6s infinite ease-in-out;
+            opacity: 0.8;
             z-index: 1;
-
         }
-
         
-
         .heart:before, .heart:after {
-
-            Content: ‘’;
-
-            Position: absolute;
-
-            Width: 25px;
-
-            Height: 25px;
-
-            Background-color: #ff66b3;
-
-            Border-radius: 50%;
-
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: #ff66b3;
+            border-radius: 50%;
         }
-
         
-
         .heart:before {
-
-            Top: -12px;
-
-            Left: 0;
-
+            top: -12px;
+            left: 0;
         }
-
         
-
         .heart:after {
-
-            Top: 0;
-
-            Left: -12px;
-
+            top: 0;
+            left: -12px;
         }
-
         
-
         .heart1 { top: 10%; left: 10%; animation-delay: 0s; }
-
         .heart2 { top: 20%; right: 15%; animation-delay: 1.5s; }
-
         .heart3 { bottom: 15%; left: 20%; animation-delay: 3s; }
-
         .heart4 { bottom: 25%; right: 10%; animation-delay: 4.5s; }
-
         
-
         @keyframes float {
-
             0%, 100% { transform: rotate(45deg) translateY(0) scale(1); }
-
             50% { transform: rotate(45deg) translateY(-20px) scale(1.1); }
-
         }
-
         
-
         @keyframes fadeIn {
-
-            From { opacity: 0; transform: translateY(-20px); }
-
-            To { opacity: 1; transform: translateY(0); }
-
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         
-
         .form-group {
-
-            Margin-bottom: 25px;
-
-            Animation: slideUp 1s ease-out;
-
-            Position: relative;
-
+            margin-bottom: 25px;
+            animation: slideUp 1s ease-out;
+            position: relative;
         }
-
         
-
         @keyframes slideUp {
-
-            From { 
-
-                Opacity: 0;
-
-                Transform: translateY(30px);
-
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
             }
-
-            To { 
-
-                Opacity: 1;
-
-                Transform: translateY(0);
-
+            to { 
+                opacity: 1;
+                transform: translateY(0);
             }
-
         }
-
         
-
-        Label {
-
-            Display: block;
-
-            Margin-bottom: 10px;
-
-            Font-weight: 600;
-
-            Color: #ff66b3;
-
-            Font-size: clamp(16px, 4vw, 18px);
-
-            Padding-left: 10px;
-
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #ff66b3;
+            font-size: clamp(16px, 4vw, 18px);
+            padding-left: 10px;
         }
-
         
-
         .text-box {
-
-            Background-color: rgba(255, 255, 255, 0.9);
-
-            Border-radius: 15px;
-
-            Padding: 15px;
-
-            Box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.08);
-
-            Border: 2px solid #ffb3d9;
-
-            Transition: all 0.3s;
-
-            Position: relative;
-
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.08);
+            border: 2px solid #ffb3d9;
+            transition: all 0.3s;
+            position: relative;
         }
-
         
-
-        Textarea {
-
-            Width: 100%;
-
-            Padding: 15px;
-
-            Border: none;
-
-            Border-radius: 10px;
-
-            Font-size: clamp(14px, 4vw, 16px);
-
-            Transition: all 0.3s;
-
-            Background-color: rgba(255, 255, 255, 0.8);
-
-            Resize: vertical;
-
-            Min-height: 150px;
-
-            Background-image: url(‘https://i.pinimg.com/originals/8f/ba/cb/8fbacbdeef7c9a9a3b4a2e4a8f6d5f5e.png’);
-
-            Background-size: 100px;
-
-            Background-repeat: no-repeat;
-
-            Background-position: right bottom;
-
-            Background-blend-mode: overlay;
-
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: clamp(14px, 4vw, 16px);
+            transition: all 0.3s;
+            background-color: rgba(255, 255, 255, 0.8);
+            resize: vertical;
+            min-height: 150px;
+            background-image: url('https://i.pinimg.com/originals/8f/ba/cb/8fbacbdeef7c9a9a3b4a2e4a8f6d5f5e.png');
+            background-size: 100px;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-blend-mode: overlay;
         }
-
         
-
         #solution {
-
-            Background-image: url(‘https://i.pinimg.com/originals/7a/3b/6f/7a3b6f8a9e0d8e8f0e8e3e8f0e8e3e8f.png’);
-
+            background-image: url('https://i.pinimg.com/originals/7a/3b/6f/7a3b6f8a9e0d8e8f0e8e3e8f0e8e3e8f.png');
         }
-
         
-
         .text-box:focus-within {
-
-            Border-color: #ff66b3;
-
-            Box-shadow: 0 0 0 4px rgba(255, 102, 179, 0.25);
-
+            border-color: #ff66b3;
+            box-shadow: 0 0 0 4px rgba(255, 102, 179, 0.25);
         }
-
         
-
-        Textarea:focus {
-
-            Outline: none;
-
-            Background-color: rgba(255, 255, 255, 0.95);
-
-            Background-image: none;
-
+        textarea:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.95);
+            background-image: none;
         }
-
         
-
         .submit-btn {
-
-            Background: linear-gradient(135deg, #ff66b3, #ff3385);
-
-            Color: white;
-
-            Border: none;
-
-            Padding: 15px 30px;
-
-            Font-size: clamp(16px, 4vw, 18px);
-
-            Border-radius: 50px;
-
-            Cursor: pointer;
-
-            Transition: all 0.3s;
-
-            Display: block;
-
-            Margin: 30px auto;
-
-            Font-weight: 600;
-
-            Text-transform: uppercase;
-
-            Letter-spacing: 1px;
-
-            Animation: pulse 2s infinite;
-
-            Width: 100%;
-
-            Max-width: 280px;
-
-            Box-shadow: 0 5px 15px rgba(255, 102, 179, 0.3);
-
-            Position: relative;
-
-            Overflow: hidden;
-
+            background: linear-gradient(135deg, #ff66b3, #ff3385);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: clamp(16px, 4vw, 18px);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 30px auto;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+            width: 100%;
+            max-width: 280px;
+            box-shadow: 0 5px 15px rgba(255, 102, 179, 0.3);
+            position: relative;
+            overflow: hidden;
             z-index: 1;
-
         }
-
         
-
         .submit-btn::before {
-
-            Content: ‘’;
-
-            Position: absolute;
-
-            Top: 0;
-
-            Left: 0;
-
-            Width: 100%;
-
-            Height: 100%;
-
-            Background: linear-gradient(135deg, #ff3385, #ff66b3);
-
-            Opacity: 0;
-
-            Transition: opacity 0.3s;
-
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff3385, #ff66b3);
+            opacity: 0;
+            transition: opacity 0.3s;
             z-index: -1;
-
         }
-
         
-
         .submit-btn:hover {
-
-            Transform: translateY(-3px);
-
-            Box-shadow: 0 8px 20px rgba(255, 102, 179, 0.4);
-
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 102, 179, 0.4);
         }
-
         
-
         .submit-btn:hover::before {
-
-            Opacity: 1;
-
+            opacity: 1;
         }
-
         
-
         @keyframes pulse {
-
             0% { box-shadow: 0 0 0 0 rgba(255, 102, 179, 0.7); }
-
             70% { box-shadow: 0 0 0 15px rgba(255, 102, 179, 0); }
-
             100% { box-shadow: 0 0 0 0 rgba(255, 102, 179, 0); }
-
         }
-
         
-
         .message {
-
-            Text-align: center;
-
-            Margin: 25px 0;
-
-            Font-style: italic;
-
-            Color: #ff66b3;
-
-            Animation: fadeIn 2s;
-
-            Font-size: clamp(14px, 4vw, 16px);
-
-            Line-height: 1.6;
-
+            text-align: center;
+            margin: 25px 0;
+            font-style: italic;
+            color: #ff66b3;
+            animation: fadeIn 2s;
+            font-size: clamp(14px, 4vw, 16px);
+            line-height: 1.6;
         }
-
         
-
         /* Thank you message */
-
         .thank-you {
-
-            Display: none;
-
-            Text-align: center;
-
-            Padding: 30px;
-
-            Animation: fadeIn 1s;
-
+            display: none;
+            text-align: center;
+            padding: 30px;
+            animation: fadeIn 1s;
         }
-
         
-
         .thank-you h2 {
-
-            Color: #ff66b3;
-
-            Font-family: ‘Dancing Script’, cursive;
-
-            Font-size: 2.5rem;
-
-            Margin-bottom: 20px;
-
+            color: #ff66b3;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
-
         
-
         .thank-you img {
-
-            Width: 120px;
-
-            Margin: 20px auto;
-
-            Display: block;
-
+            width: 120px;
+            margin: 20px auto;
+            display: block;
         }
-
-
 
         /* Loading spinner */
-
         .spinner {
-
-            Display: none;
-
-            Width: 50px;
-
-            Height: 50px;
-
-            Margin: 30px auto;
-
-            Border: 5px solid rgba(243, 243, 243, 0.8);
-
-            Border-top: 5px solid #ff66b3;
-
-            Border-radius: 50%;
-
-            Animation: spin 1s linear infinite;
-
+            display: none;
+            width: 50px;
+            height: 50px;
+            margin: 30px auto;
+            border: 5px solid rgba(243, 243, 243, 0.8);
+            border-top: 5px solid #ff66b3;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
-
         
-
         @keyframes spin {
-
             0% { transform: rotate(0deg); }
-
             100% { transform: rotate(360deg); }
-
         }
-
-
 
         /* Telegram notification */
-
         .telegram-notification {
-
-            Position: fixed;
-
-            Top: 20px;
-
-            Right: 20px;
-
-            Background-color: #0088cc;
-
-            Color: white;
-
-            Padding: 15px 20px;
-
-            Border-radius: 10px;
-
-            Box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #0088cc;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
             z-index: 1000;
-
             display: none;
-
             animation: slideIn 0.5s ease-out;
-
             max-width: 350px;
-
         }
-
         
-
         @keyframes slideIn {
-
-            From { transform: translateX(100%); }
-
-            To { transform: translateX(0); }
-
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
         }
-
         
-
         .telegram-notification-content {
-
-            Display: flex;
-
-            Align-items: center;
-
-            Gap: 12px;
-
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-
         
-
         .telegram-icon {
-
-            Width: 30px;
-
-            Height: 30px;
-
-            Flex-shrink: 0;
-
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
         }
-
         
-
         .telegram-text {
-
-            Flex: 1;
-
+            flex: 1;
         }
-
         
-
         .telegram-notification button {
-
-            Background: none;
-
-            Border: none;
-
-            Color: white;
-
-            Cursor: pointer;
-
-            Font-size: 20px;
-
-            Margin-left: 10px;
-
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 10px;
         }
-
         
-
         @media (max-width: 768px) {
-
             .container {
-
-                Padding: 20px;
-
+                padding: 20px;
             }
-
             
-
             .heart {
-
-                Width: 20px;
-
-                Height: 20px;
-
+                width: 20px;
+                height: 20px;
             }
-
             
-
             .heart:before, .heart:after {
-
-                Width: 20px;
-
-                Height: 20px;
-
+                width: 20px;
+                height: 20px;
             }
-
             
-
             .heart:before {
-
-                Top: -10px;
-
+                top: -10px;
             }
-
             
-
             .heart:after {
-
-                Left: -10px;
-
+                left: -10px;
             }
-
             
-
             .submit-btn {
-
-                Padding: 14px 25px;
-
-                Max-width: 240px;
-
+                padding: 14px 25px;
+                max-width: 240px;
             }
-
             
-
             .telegram-notification {
-
-                Left: 20px;
-
-                Right: 20px;
-
-                Max-width: none;
-
+                left: 20px;
+                right: 20px;
+                max-width: none;
             }
-
         }
-
         
-
         @media (max-width: 480px) {
-
-            Body {
-
-                Padding: 10px;
-
+            body {
+                padding: 10px;
             }
-
             
-
             .container {
-
-                Padding: 15px;
-
+                padding: 15px;
             }
-
             
-
-            Textarea {
-
-                Font-size: 16px;
-
+            textarea {
+                font-size: 16px;
             }
-
             
-
             .submit-btn {
-
-                Max-width: 100%;
-
+                max-width: 100%;
             }
-
         }
-
         
-
         .status-message {
-
-            Text-align: center;
-
-            Margin-top: 15px;
-
-            Font-size: 14px;
-
-            Color: #ff66b3;
-
-            Display: none;
-
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ff66b3;
+            display: none;
         }
-
     </style>
-
 </head>
-
 <body>
-
-    <div class=”container”>
-
-        <!—Floating hearts 
-
-        <div class=”heart heart1”></div>
-
-        <div class=”heart heart2”></div>
-
-        <div class=”heart heart3”></div>
-
-        <div class=”heart heart4”></div>
-
+    <div class="container">
+        <!-- Floating hearts -->
+        <div class="heart heart1"></div>
+        <div class="heart heart2"></div>
+        <div class="heart heart3"></div>
+        <div class="heart heart4"></div>
         
-
         <h1>Share Your Thoughts With Me Thango</h1>
-
-        <p class=”message”>Unakkenna venum sollu…🤌 Ulagaththai kaatta sollu 🤝</p>
-
+        <p class="message">Unakkenna venum sollu…🤌 Ulagaththai kaatta sollu 🤝</p>
         
-
-        <form id=”contactForm”>
-
-            <input type=”hidden” name=”_subject” value=”Avalin ennam…”>
-
-            <input type=”text” name=”_gotcha” style=”display:none”>
-
+        <form id="contactForm">
+            <input type="hidden" name="_subject" value="Avalin ennam...">
+            <input type="text" name="_gotcha" style="display:none">
             
-
-            <div class=”form-group”>
-
-                <label for=”problem”>Enna Aachu Thango 🫂?</label>
-
-                <div class=”text-box”>
-
-                    <textarea id=”problem” name=”problem” required placeholder=”Share what’s on your mind…”></textarea>
-
+            <div class="form-group">
+                <label for="problem">Enna Aachu Thango 🫂?</label>
+                <div class="text-box">
+                    <textarea id="problem" name="problem" required placeholder="Share what's on your mind..."></textarea>
                 </div>
-
             </div>
-
             
-
-            <div class=”form-group”>
-
-                <label for=”solution”>Enna pandrathu nu sollu kuttyy 🤌?</label>
-
-                <div class=”text-box”>
-
-                    <textarea id=”solution” name=”solution” placeholder=”Your suggestions or solutions…”></textarea>
-
+            <div class="form-group">
+                <label for="solution">Enna pandrathu nu sollu kuttyy 🤌?</label>
+                <div class="text-box">
+                    <textarea id="solution" name="solution" placeholder="Your suggestions or solutions..."></textarea>
                 </div>
-
             </div>
-
             
-
-            <button type=”submit” class=”submit-btn”>Send to Your Logumaniii 🤝</button>
-
-            <div class=”spinner” id=”spinner”></div>
-
-            <div class=”status-message” id=”statusMessage”></div>
-
+            <button type="submit" class="submit-btn">Send to Your Logumaniii 🤝</button>
+            <div class="spinner" id="spinner"></div>
+            <div class="status-message" id="statusMessage"></div>
         </form>
-
         
-
-        <div class=”thank-you” id=”thankYou”>
-
+        <div class="thank-you" id="thankYou">
             <h2>Thank You! ❤️</h2>
-
-            <img src=https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-11-849_512.gif alt=”Heart animation”>
-
+            <img src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-11-849_512.gif" alt="Heart animation">
             <p>Your message has been sent successfully!</p>
-
-            <p>I’ll get back to you soon.</p>
-
+            <p>I'll get back to you soon.</p>
         </div>
-
     </div>
 
-
-
-    <div class=”telegram-notification” id=”telegramNotification”>
-
-        <div class=”telegram-notification-content”>
-
-            <svg class=”telegram-icon” viewBox=”0 0 24 24” fill=”white”>
-
-                <path d=”M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z” />
-
+    <div class="telegram-notification" id="telegramNotification">
+        <div class="telegram-notification-content">
+            <svg class="telegram-icon" viewBox="0 0 24 24" fill="white">
+                <path d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z" />
             </svg>
-
-            <div class=”telegram-text”>
-
+            <div class="telegram-text">
                 <strong>Telegram Notification Sent!</strong>
-
-                <p>You’ve been notified about this submission</p>
-
+                <p>You've been notified about this submission</p>
             </div>
-
-            <button onclick=”document.getElementById(‘telegramNotification’).style.display=’none’”>✕</button>
-
+            <button onclick="document.getElementById('telegramNotification').style.display='none'">✕</button>
         </div>
-
     </div>
-
-
 
     <script>
-
         // Telegram configuration
-
-        Const TELEGRAM_BOT_TOKEN = ‘7798843127:AAG4wZ8U6HT9fHyafuF4TCyNb6voTOGj7hw’;
-
-        Const TELEGRAM_CHAT_ID = ‘1192868323’;
-
+        const TELEGRAM_BOT_TOKEN = '7798843127:AAG4wZ8U6HT9fHyafuF4TCyNb6voTOGj7hw';
+        const TELEGRAM_CHAT_ID = '1192868323';
         
-
         // Formspree configuration
-
-        Const FORMSPREE_ENDPOINT = ‘https://formspree.io/f/mblonyka’; // Replace with your Formspree ID
-
+        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mblonyka'; // Replace with your Formspree ID
         
-
-        Document.getElementById(‘contactForm’).addEventListener(‘submit’, async function€ {
-
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-
-            const submitBtn = document.querySelector(‘.submit-btn’);
-
-            const spinner = document.getElementById(‘spinner’);
-
-            const statusMessage = document.getElementById(‘statusMessage’);
-
+            const submitBtn = document.querySelector('.submit-btn');
+            const spinner = document.getElementById('spinner');
+            const statusMessage = document.getElementById('statusMessage');
             
-
             // Show loading spinner
-
-            submitBtn.style.display = ‘none’;
-
-            spinner.style.display = ‘block’;
-
-            statusMessage.style.display = ‘block’;
-
-            statusMessage.textContent = ‘Sending your message…’;
-
-            statusMessage.style.color = ‘#ff66b3’;
-
+            submitBtn.style.display = 'none';
+            spinner.style.display = 'block';
+            statusMessage.style.display = 'block';
+            statusMessage.textContent = 'Sending your message...';
+            statusMessage.style.color = '#ff66b3';
             
-
             // Get form data
-
-            Const formData = new FormData(this);
-
-            Const data = Object.fromEntries(formData.entries());
-
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
             
-
-            Const message = `📬 *New Form Submission!*\n\n` +
-
+            const message = `📬 *New Form Submission!*\n\n` +
                             `*Problem:*\n${data.problem}\n\n` +
-
-                            `*Solution:*\n${data.solution || ‘Not provided’}`;
-
+                            `*Solution:*\n${data.solution || 'Not provided'}`;
             
-
-            Try {
-
+            try {
                 // 1. Send email via Formspree
-
-                statusMessage.textContent = ‘Sending email notification…’;
-
-                const emailResponse = await fetch(https://formspree.io/f/mblonyka, {
-
-                    method: ‘POST’,
-
+                statusMessage.textContent = 'Sending email notification...';
+                const emailResponse = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
                     headers: {
-
-                        ‘Content-Type’: ‘application/json’,
-
+                        'Content-Type': 'application/json',
                     },
-
-                    Body: JSON.stringify(data),
-
+                    body: JSON.stringify(data),
                 });
-
                 
-
-                If (!emailResponse.ok) {
-
-                    Throw new Error(‘Email sending failed’);
-
+                if (!emailResponse.ok) {
+                    throw new Error('Email sending failed');
                 }
-
                 
-
                 // 2. Send Telegram notification
-
-                statusMessage.textContent = ‘Sending Telegram notification…’;
-
-                const telegramUrl = `https://api.telegram.org/bot${7798843127:AAG4wZ8U6HT9fHyafuF4TCyNb6voTOGj7hw}/sendMessage`;
-
+                statusMessage.textContent = 'Sending Telegram notification...';
+                const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
                 const telegramResponse = await fetch(telegramUrl, {
-
-                    method: ‘POST’,
-
+                    method: 'POST',
                     headers: {
-
-                        ‘Content-Type’: ‘application/json’,
-
+                        'Content-Type': 'application/json',
                     },
-
-                    Body: JSON.stringify({
-
-                        Chat_id: TELEGRAM_CHAT_ID,
-
-                        Text: message,
-
-                        Parse_mode: ‘Markdown’
-
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'Markdown'
                     }),
-
                 });
-
                 
-
-                If (!telegramResponse.ok) {
-
-                    Throw new Error(‘Telegram notification failed’);
-
+                if (!telegramResponse.ok) {
+                    throw new Error('Telegram notification failed');
                 }
-
                 
-
                 // Show Telegram notification
-
-                Document.getElementById(‘telegramNotification’).style.display = ‘block’;
-
+                document.getElementById('telegramNotification').style.display = 'block';
                 setTimeout(() => {
-
-                    document.getElementById(‘telegramNotification’).style.display = ‘none’;
-
+                    document.getElementById('telegramNotification').style.display = 'none';
                 }, 5000);
-
                 
-
                 // Show success message
-
-                Document.getElementById(‘contactForm’).style.display = ‘none’;
-
-                Document.getElementById(‘thankYou’).style.display = ‘block’;
-
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('thankYou').style.display = 'block';
                 
-
             } catch (error) {
-
-                Console.error(‘Error:’, error);
-
-                statusMessage.textContent = ‘Error: ‘ + error.message;
-
-                statusMessage.style.color = ‘#ff3385’;
-
+                console.error('Error:', error);
+                statusMessage.textContent = 'Error: ' + error.message;
+                statusMessage.style.color = '#ff3385';
                 
-
                 // Try to show partial success message
-
-                If (error.message === ‘Telegram notification failed’) {
-
-                    Document.getElementById(‘contactForm’).style.display = ‘none’;
-
-                    Document.getElementById(‘thankYou’).style.display = ‘block’;
-
-                    Document.getElementById(‘thankYou’).innerHTML += `
-
-                        <p style=”color:#ff3385; margin-top:15px;”>
-
+                if (error.message === 'Telegram notification failed') {
+                    document.getElementById('contactForm').style.display = 'none';
+                    document.getElementById('thankYou').style.display = 'block';
+                    document.getElementById('thankYou').innerHTML += `
+                        <p style="color:#ff3385; margin-top:15px;">
                             Note: Email was sent but Telegram notification failed
-
                         </p>
-
                     `;
-
                 } else {
-
-                    Alert(‘There was an error sending your message. Please try again.’);
-
+                    alert('There was an error sending your message. Please try again.');
                 }
-
             } finally {
-
                 // Hide spinner
-
-                Spinner.style.display = ‘none’;
-
+                spinner.style.display = 'none';
             }
-
         });
 
-
-
         // Prevent form resubmission on page refresh
-
-        If (window.history.replaceState) {
-
-            Window.history.replaceState(null, null, window.location.href);
-
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
         }
-
     </script>
-
 </body>
-
 </html>
-
-
-
