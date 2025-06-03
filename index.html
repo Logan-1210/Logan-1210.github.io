@@ -131,6 +131,13 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            /* Add background image */
+            background-image: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(255, 245, 250, 0.85); /* Overlay to ensure text readability */
         }
         
         .text-box::before {
@@ -140,7 +147,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 245, 250, 0.85);
+            background: rgba(255, 245, 250, 0.7); /* Adjusted opacity for better readability */
             z-index: 0;
             border-radius: 12px;
         }
@@ -157,6 +164,7 @@
             min-height: 150px;
             position: relative;
             z-index: 1;
+            color: #333; /* Ensure text is dark for contrast */
         }
         
         textarea::placeholder {
@@ -170,7 +178,7 @@
         }
         
         .text-box:focus-within::before {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.8); /* Slightly more opaque on focus */
         }
         
         textarea:focus {
@@ -432,7 +440,9 @@
 </head>
 <body>
     <!-- Telegram notification -->
-    
+    <div class="telegram-notification" id="telegramNotification">
+        <i class="fab fa-telegram-plane"></i> I received your msg 🫂
+    </div>
     
     <!-- Background decorations -->
     <div class="bg-decoration bg-1">🫰</div>
