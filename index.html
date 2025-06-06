@@ -25,14 +25,12 @@
             padding: 20px;
             overflow-x: hidden;
             position: relative;
-            
-            
         }
         
         .container {
             width: 90%;
             max-width: 800px;
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.85);
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -40,7 +38,11 @@
             padding: 40px 30px;
             border: 2px solid rgba(255, 102, 179, 0.2);
             z-index: 10;
-            
+            /* Container background image */
+            background-image: url('https://image.tmdb.org/t/p/w500//2LMVcIElqqUkjJVzcGu379x7zvW.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
         }
         
         h1 {
@@ -52,6 +54,9 @@
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
             animation: fadeIn 1.5s;
             line-height: 1.2;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 15px;
         }
         
         .heart {
@@ -123,10 +128,14 @@
             color: #ff3399;
             font-size: clamp(16px, 4vw, 18px);
             padding-left: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
         }
         
         .text-box {
-            background-color: rgba(255, 255, 255, 0.3); /* Reduced opacity for clearer image */
+            background-color: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             padding: 15px;
             box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.08);
@@ -134,12 +143,10 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
-            /* Background image */
-            background-image: url('https://insidethemagic.net/wp-content/uploads/2022/11/Elemental-Hands.jpgiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2EyZTY5ZTNlLTU3Y2QtNGY1NC1hYTkwLWZlYThlNDYwZTRhN1wvZGZycm52NS1jNmY3NWE1ZS0xYTAwLTRmZGMtYjdiZS1mNWVlMTRmYWQyODYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.N9F3ztrCbKiJkUGz7XgIg7HJDwzUmE-Ir5eyPVvXLNE');
+            /* Text box background image */
+            background-image: url('https://example.com/your-textbox-background-image.jpg');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            /* Removed background-blend-mode to prevent washing out */
         }
         
         .text-box::before {
@@ -149,7 +156,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 245, 250, 0.3); /* Further reduced opacity */
+            background: rgba(255, 245, 250, 0.4);
             z-index: 0;
             border-radius: 12px;
         }
@@ -166,8 +173,8 @@
             min-height: 150px;
             position: relative;
             z-index: 1;
-            color: #111; /* Darker text for better contrast */
-            text-shadow: 0 0 3px rgba(255, 255, 255, 1); /* Stronger shadow for readability */
+            color: #111;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 1);
         }
         
         textarea::placeholder {
@@ -182,7 +189,7 @@
         }
         
         .text-box:focus-within::before {
-            background: rgba(255, 245, 250, 0.4); /* Slightly more opaque on focus */
+            background: rgba(255, 245, 250, 0.5);
         }
         
         textarea:focus {
@@ -248,7 +255,9 @@
             animation: fadeIn 2s;
             font-size: clamp(15px, 4vw, 17px);
             line-height: 1.6;
-            padding: 0 15px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
         }
         
         /* Thank you message */
@@ -257,6 +266,13 @@
             text-align: center;
             padding: 30px;
             animation: fadeIn 1s;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            /* Thank you section background */
+            background-image: url('https://example.com/your-thankyou-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
         }
         
         .thank-you h2 {
@@ -265,6 +281,10 @@
             font-size: clamp(2.5rem, 6vw, 3.5rem);
             margin-bottom: 25px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 15px;
+            display: inline-block;
         }
         
         /* Korean love symbol animation */
@@ -276,6 +296,12 @@
             animation: loveAnimation 2.5s infinite ease-in-out;
             transform-origin: center;
             filter: drop-shadow(0 5px 10px rgba(255, 51, 153, 0.3));
+            background-color: rgba(255, 255, 255, 0.5);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 50%;
+            padding: 20px;
         }
         
         @keyframes loveAnimation {
@@ -306,6 +332,10 @@
             margin: 15px 0;
             color: #555;
             line-height: 1.6;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px 15px;
+            border-radius: 15px;
+            display: inline-block;
         }
         
         /* Loading spinner */
@@ -318,6 +348,7 @@
             border-top: 5px solid #ff3399;
             border-radius: 50%;
             animation: spin 1s linear infinite;
+            background-color: rgba(255, 255, 255, 0.7);
         }
         
         @keyframes spin {
@@ -331,6 +362,9 @@
             font-size: 14px;
             color: #ff3399;
             display: none;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 15px;
         }
         
         /* Background decorations */
