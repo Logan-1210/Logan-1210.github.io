@@ -69,7 +69,7 @@
 
         p {
             font-family: 'Dancing Script', cursive;
-            color: #ff3399;
+            color: Red;
             text-align: center;
             font-size: clamp(2.5rem, 6vw, 4rem);
             margin: 10px 0 20px;
@@ -79,7 +79,7 @@
             background-color: rgba(255, 255, 255, 0.7);
             padding: 10px;
             border-radius: 15px;
-            background-image: url('');
+            background-image: url('https://cdn.bhdw.net/im/wade-and-ember-lumen-from-elemental-wallpaper-117020_w635.webp');
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
@@ -169,10 +169,18 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
-            /* Text box background image */
-            background-image: url('');
             background-size: cover;
             background-position: center;
+        }
+        
+        /* Problem text box background - PASTE YOUR IMAGE URL HERE */
+        #problem-box {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0uroocaEx5xsxObGG1yAUBm5bouCRhrrok0_F3cgEg1JaWhiOxdzzEXpB&s=10');
+        }
+        
+        /* Solution text box background - PASTE YOUR IMAGE URL HERE */
+        #solution-box {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR6mj8xeoxYJPEJeTlzXLYd7YESPgxp_XZTnsjide90xrEWR7ku5Pk47I&s=10');
         }
         
         .text-box::before {
@@ -225,7 +233,7 @@
         .submit-btn {
             background: linear-gradient(135deg, #ff3399, #ff0066);
             color: white;
-            border: none;
+            border-color: #ff0000;
             padding: 16px 35px;
             font-size: clamp(16px, 4vw, 18px);
             border-radius: 50px;
@@ -525,7 +533,7 @@
         <div class="heart heart3"></div>
         <div class="heart heart4"></div>
         
-        <h1>Share Your Thoughts With Me Thango🫂</h1>
+        <h1>Share Your Thoughts With Me Thango</h1>
         <p class="message">Unakkenna venum sollu…🤌 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ulagaththai kaatta sollu 🤝</p>
         
         <form id="contactForm">
@@ -534,14 +542,14 @@
             
             <div class="form-group">
                 <label for="problem">Enna Aachu Thango🫂?</label>
-                <div class="text-box">
+                <div class="text-box" id="problem-box">
                     <textarea id="problem" name="problem" required placeholder=""></textarea>
                 </div>
             </div>
             
             <div class="form-group">
                 <label for="solution">Enna pandrathu nu sollu kuttyy🤌?</label>
-                <div class="text-box">
+                <div class="text-box" id="solution-box">
                     <textarea id="solution" name="solution" placeholder=""></textarea>
                 </div>
             </div>
