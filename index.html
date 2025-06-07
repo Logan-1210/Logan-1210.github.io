@@ -425,30 +425,8 @@
         .bg-3 { bottom: 10%; left: 15%; animation-duration: 35s; }
         .bg-4 { bottom: 20%; right: 5%; animation-duration: 40s; }
         
-        /* Telegram notification badge */
-        .telegram-notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #0088cc, #2aabee);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            z-index: 100;
-            opacity: 0;
-            transform: translateX(100px);
-            transition: all 0.4s ease;
-        }
+
         
-        .telegram-notification.show {
-            opacity: 0.5;
-            transform: translateX(0);
-        }
         
         @media (max-width: 768px) {
             .container {
@@ -482,12 +460,7 @@
                 font-size: 90px;
             }
             
-            .telegram-notification {
-                top: 10px;
-                right: 10px;
-                font-size: 14px;
-                padding: 8px 15px;
-            }
+            
         }
         
         @media (max-width: 480px) {
@@ -515,10 +488,6 @@
     </style>
 </head>
 <body>
-    <!-- Telegram notification -->
-    <div class="telegram-notification" id="telegramNotification">
-        <i class="fab fa-telegram-plane"> "I received your msg kutty🤌"</i> 
-    </div>
     
     <!-- Background decorations -->
     <div class="bg-decoration bg-1">🫰</div>
