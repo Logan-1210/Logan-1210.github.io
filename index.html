@@ -67,9 +67,10 @@
             background-blend-mode: overlay;
         }
 
-        p {
+        /* First <p> tag background - PASTE YOUR IMAGE URL HERE */
+        p.message:nth-of-type(1) {
             font-family: 'Dancing Script', cursive;
-            color: Red;
+            color: #ff0000;
             text-align: center;
             font-size: clamp(2.5rem, 6vw, 4rem);
             margin: 10px 0 20px;
@@ -80,6 +81,25 @@
             padding: 10px;
             border-radius: 15px;
             background-image: url('https://cdn.bhdw.net/im/wade-and-ember-lumen-from-elemental-wallpaper-117020_w635.webp');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+
+        /* Second <p> tag background - PASTE YOUR IMAGE URL HERE */
+        p.message:nth-of-type(2) {
+            font-family: 'Dancing Script', cursive;
+            color: #ff0000;
+            text-align: center;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin: 10px 0 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s;
+            line-height: 1.2;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 15px;
+            background-image: url('https://example.com/your-second-p-tag-image.jpg');
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
@@ -175,12 +195,12 @@
         
         /* Problem text box background - PASTE YOUR IMAGE URL HERE */
         #problem-box {
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0uroocaEx5xsxObGG1yAUBm5bouCRhrrok0_F3cgEg1JaWhiOxdzzEXpB&s=10');
+            background-image: url('https://example.com/your-problem-image.jpg');
         }
         
         /* Solution text box background - PASTE YOUR IMAGE URL HERE */
         #solution-box {
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR6mj8xeoxYJPEJeTlzXLYd7YESPgxp_XZTnsjide90xrEWR7ku5Pk47I&s=10');
+            background-image: url('https://example.com/your-solution-image.jpg');
         }
         
         .text-box::before {
@@ -233,7 +253,7 @@
         .submit-btn {
             background: linear-gradient(135deg, #ff3399, #ff0066);
             color: white;
-            border-color: #ff0000;
+            border: none;
             padding: 16px 35px;
             font-size: clamp(16px, 4vw, 18px);
             border-radius: 50px;
@@ -298,19 +318,30 @@
             border-radius: 15px;
         }
         
-        /* Thank you message */
+        /* Thank you message - Improved styling */
         .thank-you {
             display: none;
             text-align: center;
-            padding: 30px;
+            padding: 40px 30px;
             animation: fadeIn 1s;
             background-color: rgba(255, 255, 255, 0.85);
             border-radius: 15px;
-            /* Thank you section background */
+            /* Thank you section background - PASTE YOUR IMAGE URL HERE */
             background-image: url('https://cdn.bhdw.net/im/elemental-cartoon-animated-movie-characters-poster-wallpaper-108484_w635.webp');
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .thank-you-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .thank-you h2 {
@@ -320,26 +351,24 @@
             margin-bottom: 25px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             background-color: rgba(255, 255, 255, 0.7);
-            padding: 10px;
+            padding: 10px 20px;
             border-radius: 15px;
             display: inline-block;
         }
         
-        /* Korean love symbol animation */
+        /* Korean love symbol animation - Improved positioning */
         .korean-love {
-            font-size: 120px;
+            font-size: 100px;
             text-align: center;
-            margin: 25px 0;
+            margin: 20px auto;
             display: block;
             animation: loveAnimation 2.5s infinite ease-in-out;
             transform-origin: center;
             filter: drop-shadow(0 5px 10px rgba(255, 51, 153, 0.3));
             background-color: rgba(255, 255, 255, 0.5);
             width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 50%;
             padding: 20px;
+            border-radius: 50%;
         }
         
         @keyframes loveAnimation {
@@ -374,6 +403,7 @@
             padding: 10px 15px;
             border-radius: 15px;
             display: inline-block;
+            max-width: 80%;
         }
         
         /* Loading spinner */
@@ -425,8 +455,30 @@
         .bg-3 { bottom: 10%; left: 15%; animation-duration: 35s; }
         .bg-4 { bottom: 20%; right: 5%; animation-duration: 40s; }
         
-
+        /* Telegram notification badge */
+        .telegram-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #0088cc, #2aabee);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            z-index: 100;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.4s ease;
+        }
         
+        .telegram-notification.show {
+            opacity: 0.5;
+            transform: translateX(0);
+        }
         
         @media (max-width: 768px) {
             .container {
@@ -457,10 +509,19 @@
             }
             
             .korean-love {
-                font-size: 90px;
+                font-size: 80px;
             }
             
+            .thank-you p {
+                max-width: 90%;
+            }
             
+            .telegram-notification {
+                top: 10px;
+                right: 10px;
+                font-size: 14px;
+                padding: 8px 15px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -481,13 +542,25 @@
             }
             
             .korean-love {
-                font-size: 80px;
+                font-size: 70px;
                 margin: 15px 0;
+            }
+            
+            .thank-you {
+                padding: 30px 15px;
+            }
+            
+            .thank-you-content {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Telegram notification -->
+    <div class="telegram-notification" id="telegramNotification">
+        <i class="fab fa-telegram-plane"> "I received your msg kutty🤌"</i> 
+    </div>
     
     <!-- Background decorations -->
     <div class="bg-decoration bg-1">🫰</div>
@@ -502,7 +575,7 @@
         <div class="heart heart3"></div>
         <div class="heart heart4"></div>
         
-        <h1>Share Your Thoughts With Me Thango</h1>
+        <h1>Share Your Thoughts With Me Thango🫂</h1>
         <p class="message">Unakkenna venum sollu…🤌 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ulagaththai kaatta sollu 🤝</p>
         
         <form id="contactForm">
@@ -529,10 +602,12 @@
         </form>
         
         <div class="thank-you" id="thankYou">
-            <h2>I Love You Thango🫶</h2>
-            <div class="korean-love">🫰</div>
-            <p>I got your msg di Chella kuttyyyyy🤌</p>
-            <p>I'll get back to you soon🫂</p>
+            <div class="thank-you-content">
+                <h2>I Love You Thango🫶</h2>
+                <div class="korean-love">🫰</div>
+                <p>I got your msg di Chella kuttyyyyy🤌</p>
+                <p>I'll get back to you soon🫂</p>
+            </div>
         </div>
     </div>
 
