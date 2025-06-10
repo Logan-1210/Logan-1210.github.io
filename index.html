@@ -25,7 +25,7 @@
             padding: 20px;
             overflow-x: hidden;
             position: relative;
-            background-image: url('');
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTw4tks8QkcidRVWDgJnAgS7p4ZD_f7SyB3T2kY0D1eR34ajTmHDnLWc8W&s=10');
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
@@ -204,7 +204,8 @@
             padding: 15px;
             border: none;
             border-radius: 10px;
-            font-size: clamp(14px, 4vw, 16px);
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(10px, 2vw, 12px);
             transition: all 0.3s;
             background-color: transparent;
             resize: vertical;
@@ -319,10 +320,10 @@
             text-align: center;
             padding: 30px;
             animation: fadeIn 1s;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0);
             border-radius: 15px;
             /* Thank you section background - PASTE YOUR IMAGE URL HERE */
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTw4tks8QkcidRVWDgJnAgS7p4ZD_f7SyB3T2kY0D1eR34ajTmHDnLWc8W&s=10');
+            background-image: url('');
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
@@ -407,10 +408,10 @@
             height: 50px;
             margin: 30px auto;
             border: 5px solid rgba(243, 243, 243, 0.8);
-            border-top: 5px solid #ff3399;
+            border-top: 5px solid #ff0000;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.3);
         }
         
         @keyframes spin {
@@ -424,56 +425,17 @@
             font-size: 14px;
             color: #ff0000;
             display: none;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.3);
             padding: 10px;
             border-radius: 15px;
         }
         
         /* Background decorations */
-        .bg-decoration {
-            position: fixed;
-            z-index: 0;
-            opacity: 0.1;
-            font-size: 300px;
-            animation: floatBg 20s infinite linear;
-        }
         
-        @keyframes floatBg {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-100px) rotate(180deg); }
-            100% { transform: translateY(0) rotate(360deg); }
-        }
         
-        .bg-1 { top: 5%; left: 5%; animation-duration: 25s; }
-        .bg-2 { top: 15%; right: 10%; animation-duration: 30s; }
-        .bg-3 { bottom: 10%; left: 15%; animation-duration: 35s; }
-        .bg-4 { bottom: 20%; right: 5%; animation-duration: 40s; }
         
         /* Telegram notification badge */
-        .telegram-notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #0088cc, #2aabee);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 300;
-            z-index: 100;
-            opacity: 0;
-            text-transform: capitalise;
-            transform: translateX(100px);
-            transition: all 0.4s ease;
-        }
         
-        .telegram-notification.show {
-            opacity: 0.5;
-            transform: translateX(0);
-        }
         
         @media (max-width: 768px) {
             .container {
@@ -511,14 +473,7 @@
                 max-width: 90%;
             }
             
-            .telegram-notification {
-                top: 10px;
-                right: 10px;
-                font-family: 'Somic Sans', cursive;
-                text-transform: capitalise;
-                font-size: 10px;
-                padding: 8px 15px;
-            }
+
         }
         
         @media (max-width: 480px) {
@@ -555,15 +510,10 @@
 </head>
 <body>
     <!-- Telegram notification -->
-    <div class="telegram-notification" id="telegramNotification">
-        <i class="fab fa-telegram-plane"> "I received your msg kutty🤌"</i> 
-    </div>
+    
     
     <!-- Background decorations -->
-    <div class="bg-decoration bg-1">🫰</div>
-    <div class="bg-decoration bg-2">🫶</div>
-    <div class="bg-decoration bg-3">🤌</div>
-    <div class="bg-decoration bg-4">🤝</div>
+    
     
     <div class="container">
         <!-- Floating hearts -->
